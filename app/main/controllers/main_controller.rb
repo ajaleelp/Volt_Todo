@@ -1,6 +1,7 @@
 # By default Volt generates this controller for your Main component
 module Main
   class MainController < Volt::ModelController
+    model :store
     def index
       # Add code for when the index view is loaded
     end
@@ -25,12 +26,12 @@ module Main
     end
 
     def add_todo
-      page._todos << { name: page._new_todo}
+      _todos << { name: page._new_todo}
       page._new_todo = ''
     end
 
     def current_todo
-      page._todos[(params._index || 0).to_i]
+      _todos[(params._index || 0).to_i]
     end
   end
 end

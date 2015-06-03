@@ -5,10 +5,10 @@
   <div class="row">
     <div class="col-md-4">
 
-      <h1>Todo List</h1>
+      <h1>{{ _todos.size }} Todo List</h1>
 
       <table class="todo-table">
-        {{page._todos.each_with_index do |todo, index| }}
+        {{_todos.each_with_index do |todo, index| }}
         <!-- Use params to store the current index -->
         <tr
           e-click="params._index = index"
