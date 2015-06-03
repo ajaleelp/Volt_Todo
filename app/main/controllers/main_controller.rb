@@ -28,5 +28,9 @@ module Main
       page._todos << { name: page._new_todo}
       page._new_todo = ''
     end
+
+    def current_todo
+      page._todos[(params._index || 0).to_i]
+    end
   end
 end
